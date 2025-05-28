@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universo Digital | Portfólio Interativo</title>
+    <meta name="description" content="Explore o Universo Digital - uma experiência interativa de portfólio onde cada planeta representa uma área de expertise ou projeto.">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">UNIVERSO DIGITAL</div>
+            <div class="preloader-progress">
+                <div class="preloader-progress-bar"></div>
+            </div>
+            <div class="preloader-text">Iniciando exploração...</div>
+        </div>
+    </div>
+
+    <!-- Partículas de Fundo -->
+    <div class="particles-container">
+        <canvas id="particles-canvas"></canvas>
+    </div>
+
+    <!-- Cursor Personalizado -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-trail"></div>
+
+    <!-- Container Principal -->
+    <div class="universe-container">
+        <!-- Navegação Principal -->
+        <nav class="main-nav">
+            <div class="logo">
+                <span class="logo-text">UNIVERSO DIGITAL</span>
+            </div>
+            <div class="nav-toggle">
+                <div class="nav-toggle-bar"></div>
+                <div class="nav-toggle-bar"></div>
+                <div class="nav-toggle-bar"></div>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#universe" class="nav-link active" data-section="universe">Universo</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link" data-section="about">Sobre</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link" data-section="projects">Projetos</a></li>
+                <li class="nav-item"><a href="#lab" class="nav-link" data-section="lab">Laboratório</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link" data-section="contact">Contato</a></li>
+            </ul>
+        </nav>
+
+        <!-- Seção Universo (Home) -->
+        <section id="universe" class="section section-universe active">
+            <div class="universe-content">
+                <h1 class="universe-title">Bem-vindo ao <span class="highlight">Universo Digital</span></h1>
+                <p class="universe-subtitle">Uma experiência interativa de portfólio</p>
+                <div class="universe-instruction">Navegue pelos planetas para explorar diferentes seções</div>
+            </div>
+
+            <div class="universe-map">
+                <!-- Planetas -->
+                <div class="planet planet-about" data-planet="about">
+                    <div class="planet-orbit"></div>
+                    <div class="planet-body">
+                        <div class="planet-label">Sobre</div>
+                    </div>
+                </div>
+
+                <div class="planet planet-projects" data-planet="projects">
+                    <div class="planet-orbit"></div>
+                    <div class="planet-body">
+                        <div class="planet-label">Projetos</div>
+                    </div>
+                </div>
+
+                <div class="planet planet-lab" data-planet="lab">
+                    <div class="planet-orbit"></div>
+                    <div class="planet-body">
+                        <div class="planet-label">Laboratório</div>
+                    </div>
+                </div>
+
+                <div class="planet planet-contact" data-planet="contact">
+                    <div class="planet-orbit"></div>
+                    <div class="planet-body">
+                        <div class="planet-label">Contato</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="universe-controls">
+                <button class="explore-btn">Explorar</button>
+            </div>
+        </section>
+
+        <!-- Seção Sobre -->
+        <section id="about" class="section section-about">
+            <div class="section-header">
+                <h2 class="section-title">Sobre</h2>
+                <div class="section-subtitle">Conheça mais sobre mim e minha trajetória</div>
+                <div class="section-nav">
+                    <button class="section-nav-btn back-to-universe" data-target="universe">Voltar ao Universo</button>
+                </div>
+            </div>
+
+            <div class="about-content">
+                <div class="about-profile">
+                    <div class="profile-avatar">
+                        <div class="avatar-container">
+                            <div class="avatar-placeholder"></div>
+                        </div>
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="profile-name">Nome do Desenvolvedor</h3>
+                        <div class="profile-title">Desenvolvedor Full Stack & Designer de Experiências</div>
+                        <div class="profile-bio">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
+                            <p>Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-timeline">
+                    <h3 class="timeline-title">Minha Trajetória</h3>
+                    <div class="timeline-container">
+                        <div class="timeline-item" data-year="2023">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4 class="timeline-item-title">Desenvolvedor Senior</h4>
+                                <div class="timeline-item-subtitle">Empresa Inovadora</div>
+                                <p class="timeline-item-desc">Desenvolvimento de soluções avançadas utilizando tecnologias de ponta.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item" data-year="2021">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4 class="timeline-item-title">Desenvolvedor Full Stack</h4>
+                                <div class="timeline-item-subtitle">Startup Tecnológica</div>
+                                <p class="timeline-item-desc">Criação de aplicações web completas com foco em experiência do usuário.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item" data-year="2019">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4 class="timeline-item-title">Desenvolvedor Front-end</h4>
+                                <div class="timeline-item-subtitle">Agência Digital</div>
+                                <p class="timeline-item-desc">Desenvolvimento de interfaces interativas e responsivas para diversos clientes.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item" data-year="2017">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4 class="timeline-item-title">Graduação em Ciência da Computação</h4>
+                                <div class="timeline-item-subtitle">Universidade Federal</div>
+                                <p class="timeline-item-desc">Formação com ênfase em desenvolvimento web e experiência do usuário.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-skills">
+                    <h3 class="skills-title">Constelação de Habilidades</h3>
+                    <div class="skills-container">
+                        <div class="skill-group">
+                            <h4 class="skill-group-title">Frontend</h4>
+                            <div class="skill-items">
+                                <div class="skill-item" data-skill="HTML5" data-level="95">
+                                    <div class="skill-name">HTML5</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-skill="CSS3" data-level="90">
+                                    <div class="skill-name">CSS3</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-skill="JavaScript" data-level="85">
+                                    <div class="skill-name">JavaScript</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h4 class="skill-group-title">Backend</h4>
+                            <div class="skill-items">
+                                <div class="skill-item" data-skill="Node.js" data-level="80">
+                                    <div class="skill-name">Node.js</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-skill="Python" data-level="75">
+                                    <div class="skill-name">Python</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-skill="SQL" data-level="70">
+                                    <div class="skill-name">SQL</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h4 class="skill-group-title">Design</h4>
+                            <div class="skill-items">
+                                <div class="skill-item" data-skill="UI/UX" data-level="85">
+                                    <div class="skill-name">UI/UX</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-skill="Figma" data-level="80">
+                                    <div class="skill-name">Figma</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-skill="Animações" data-level="75">
+                                    <div class="skill-name">Animações</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Projetos -->
+        <section id="projects" class="section section-projects">
+            <div class="section-header">
+                <h2 class="section-title">Projetos</h2>
+                <div class="section-subtitle">Explore meus trabalhos mais recentes</div>
+                <div class="section-nav">
+                    <button class="section-nav-btn back-to-universe" data-target="universe">Voltar ao Universo</button>
+                </div>
+            </div>
+
+            <div class="projects-content">
+                <div class="projects-filter">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                    <button class="filter-btn" data-filter="mobile">Mobile</button>
+                    <button class="filter-btn" data-filter="design">Design</button>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Projeto 1 -->
+                    <div class="project-card" data-category="web">
+                        <div class="project-thumbnail">
+                            <div class="project-thumbnail-placeholder"></div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Plataforma Educacional</h3>
+                            <div class="project-category">Web Development</div>
+                            <p class="project-desc">Plataforma completa para cursos online com recursos interativos.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <button class="project-view-btn" data-project="project1">Ver Detalhes</button>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 2 -->
+                    <div class="project-card" data-category="mobile">
+                        <div class="project-thumbnail">
+                            <div class="project-thumbnail-placeholder"></div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">App de Produtividade</h3>
+                            <div class="project-category">Mobile Development</div>
+                            <p class="project-desc">Aplicativo para gerenciamento de tarefas e aumento de produtividade.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                            </div>
+                            <button class="project-view-btn" data-project="project2">Ver Detalhes</button>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 3 -->
+                    <div class="project-card" data-category="design">
+                        <div class="project-thumbnail">
+                            <div class="project-thumbnail-placeholder"></div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Redesign de E-commerce</h3>
+                            <div class="project-category">UI/UX Design</div>
+                            <p class="project-desc">Redesign completo de interface para loja virtual com foco em conversão.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Figma</span>
+                                <span class="tech-tag">Adobe XD</span>
+                                <span class="tech-tag">Prototyping</span>
+                            </div>
+                            <button class="project-view-btn" data-project="project3">Ver Detalhes</button>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 4 -->
+                    <div class="project-card" data-category="web">
+                        <div class="project-thumbnail">
+                            <div class="project-thumbnail-placeholder"></div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Dashboard Analítico</h3>
+                            <div class="project-category">Web Development</div>
+                            <p class="project-desc">Dashboard interativo para visualização de dados empresariais.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">D3.js</span>
+                                <span class="tech-tag">CSS Grid</span>
+                            </div>
+                            <button class="project-view-btn" data-project="project4">Ver Detalhes</button>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 5 -->
+                    <div class="project-card" data-category="mobile">
+                        <div class="project-thumbnail">
+                            <div class="project-thumbnail-placeholder"></div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">App de Fitness</h3>
+                            <div class="project-category">Mobile Development</div>
+                            <p class="project-desc">Aplicativo para acompanhamento de treinos e nutrição personalizada.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Flutter</span>
+                                <span class="tech-tag">Firebase</span>
+                                <span class="tech-tag">REST API</span>
+                            </div>
+                            <button class="project-view-btn" data-project="project5">Ver Detalhes</button>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 6 -->
+                    <div class="project-card" data-category="design">
+                        <div class="project-thumbnail">
+                            <div class="project-thumbnail-placeholder"></div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Sistema de Design</h3>
+                            <div class="project-category">UI/UX Design</div>
+                            <p class="project-desc">Sistema de design completo para startup de tecnologia.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Design System</span>
+                                <span class="tech-tag">Component Library</span>
+                                <span class="tech-tag">Style Guide</span>
+                            </div>
+                            <button class="project-view-btn" data-project="project6">Ver Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal de Detalhes do Projeto -->
+            <div class="project-modal">
+                <div class="modal-content">
+                    <button class="modal-close">&times;</button>
+                    <div class="modal-body">
+                        <h3 class="modal-title">Título do Projeto</h3>
+                        <div class="modal-subtitle">Categoria do Projeto</div>
+                        
+                        <div class="modal-gallery">
+                            <div class="gallery-main">
+                                <div class="gallery-placeholder"></div>
+                            </div>
+                            <div class="gallery-thumbs">
+                                <div class="gallery-thumb active"></div>
+                                <div class="gallery-thumb"></div>
+                                <div class="gallery-thumb"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="modal-description">
+                            <p>Descrição detalhada do projeto será carregada dinamicamente.</p>
+                        </div>
+                        
+                        <div class="modal-tech">
+                            <h4>Tecnologias Utilizadas</h4>
+                            <div class="modal-tech-tags">
+                                <!-- Tags serão adicionadas dinamicamente -->
+                            </div>
+                        </div>
+                        
+                        <div class="modal-links">
+                            <a href="#" class="modal-link" target="_blank">Ver Projeto</a>
+                            <a href="#" class="modal-link" target="_blank">Repositório</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Laboratório -->
+        <section id="lab" class="section section-lab">
+            <div class="section-header">
+                <h2 class="section-title">Laboratório</h2>
+                <div class="section-subtitle">Experimentos interativos e demonstrações técnicas</div>
+                <div class="section-nav">
+                    <button class="section-nav-btn back-to-universe" data-target="universe">Voltar ao Universo</button>
+                </div>
+            </div>
+
+            <div class="lab-content">
+                <div class="lab-tabs">
+                    <button class="lab-tab active" data-tab="particles">Partículas</button>
+                    <button class="lab-tab" data-tab="canvas">Canvas</button>
+                    <button class="lab-tab" data-tab="audio">Web Audio</button>
+                    <button class="lab-tab" data-tab="physics">Física</button>
+                </div>
+
+                <div class="lab-experiments">
+                    <!-- Experimento de Partículas -->
+                    <div class="lab-experiment active" id="particles-exp">
+                        <div class="experiment-container">
+                            <canvas id="particles-experiment-canvas"></canvas>
+                        </div>
+                        <div class="experiment-controls">
+                            <div class="control-group">
+                                <label for="particles-count">Quantidade de Partículas</label>
+                                <input type="range" id="particles-count" min="50" max="500" value="200">
+                            </div>
+                            <div class="control-group">
+                                <label for="particles-speed">Velocidade</label>
+                                <input type="range" id="particles-speed" min="1" max="10" value="5">
+                            </div>
+                            <div class="control-group">
+                                <label for="particles-size">Tamanho</label>
+                                <input type="range" id="particles-size" min="1" max="5" value="2">
+                            </div>
+                            <div class="control-group">
+                                <label for="particles-color">Cor</label>
+                                <div class="color-options">
+                                    <button class="color-option active" data-color="blue"></button>
+                                    <button class="color-option" data-color="purple"></button>
+                                    <button class="color-option" data-color="pink"></button>
+                                    <button class="color-option" data-color="green"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="experiment-info">
+                            <h3>Sistema de Partículas Interativo</h3>
+                            <p>Este experimento demonstra a criação de um sistema de partículas interativo usando JavaScript puro e Canvas. As partículas respondem ao movimento do cursor e podem ser configuradas através dos controles.</p>
+                            <p>Tecnologias utilizadas: Canvas API, JavaScript, Matemática vetorial</p>
+                        </div>
+                    </div>
+
+                    <!-- Experimento de Canvas -->
+                    <div class="lab-experiment" id="canvas-exp">
+                        <div class="experiment-container">
+                            <canvas id="canvas-experiment-canvas"></canvas>
+                        </div>
+                        <div class="experiment-controls">
+                            <div class="control-group">
+                                <label>Ferramentas</label>
+                                <div class="tool-options">
+                                    <button class="tool-option active" data-tool="brush">Pincel</button>
+                                    <button class="tool-option" data-tool="line">Linha</button>
+                                    <button class="tool-option" data-tool="circle">Círculo</button>
+                                    <button class="tool-option" data-tool="rectangle">Retângulo</button>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label for="brush-size">Tamanho</label>
+                                <input type="range" id="brush-size" min="1" max="50" value="10">
+                            </div>
+                            <div class="control-group">
+                                <label for="brush-color">Cor</label>
+                                <input type="color" id="brush-color" value="#05D8E8">
+                            </div>
+                            <button class="clear-canvas">Limpar Canvas</button>
+                        </div>
+                        <div class="experiment-info">
+                            <h3>Mini Editor de Desenho</h3>
+                            <p>Este experimento demonstra a criação de um editor de desenho simples usando a API Canvas do HTML5. Você pode desenhar livremente, criar formas geométricas e personalizar cores e tamanhos.</p>
+                            <p>Tecnologias utilizadas: Canvas API, JavaScript, Eventos de Mouse</p>
+                        </div>
+                    </div>
+
+                    <!-- Experimento de Web Audio -->
+                    <div class="lab-experiment" id="audio-exp">
+                        <div class="experiment-container">
+                            <div class="audio-visualizer">
+                                <canvas id="audio-visualizer-canvas"></canvas>
+                            </div>
+                            <div class="keyboard-container">
+                                <div class="piano-key" data-note="C4"></div>
+                                <div class="piano-key black" data-note="C#4"></div>
+                                <div class="piano-key" data-note="D4"></div>
+                                <div class="piano-key black" data-note="D#4"></div>
+                                <div class="piano-key" data-note="E4"></div>
+                                <div class="piano-key" data-note="F4"></div>
+                                <div class="piano-key black" data-note="F#4"></div>
+                                <div class="piano-key" data-note="G4"></div>
+                                <div class="piano-key black" data-note="G#4"></div>
+                                <div class="piano-key" data-note="A4"></div>
+                                <div class="piano-key black" data-note="A#4"></div>
+                                <div class="piano-key" data-note="B4"></div>
+                            </div>
+                        </div>
+                        <div class="experiment-controls">
+                            <div class="control-group">
+                                <label for="wave-type">Tipo de Onda</label>
+                                <select id="wave-type">
+                                    <option value="sine">Senoidal</option>
+                                    <option value="square">Quadrada</option>
+                                    <option value="sawtooth">Dente de Serra</option>
+                                    <option value="triangle">Triangular</option>
+                                </select>
+                            </div>
+                            <div class="control-group">
+                                <label for="attack-time">Ataque</label>
+                                <input type="range" id="attack-time" min="0" max="1" step="0.01" value="0.1">
+                            </div>
+                            <div class="control-group">
+                                <label for="release-time">Release</label>
+                                <input type="range" id="release-time" min="0" max="2" step="0.01" value="0.5">
+                            </div>
+                            <div class="control-group">
+                                <label for="reverb-level">Reverb</label>
+                                <input type="range" id="reverb-level" min="0" max="1" step="0.01" value="0.3">
+                            </div>
+                        </div>
+                        <div class="experiment-info">
+                            <h3>Sintetizador Web Audio</h3>
+                            <p>Este experimento demonstra o uso da Web Audio API para criar um sintetizador musical interativo com visualização em tempo real. Toque no teclado virtual ou use seu teclado do computador (teclas A-L) para tocar notas.</p>
+                            <p>Tecnologias utilizadas: Web Audio API, Canvas para visualização, JavaScript</p>
+                        </div>
+                    </div>
+
+                    <!-- Experimento de Física -->
+                    <div class="lab-experiment" id="physics-exp">
+                        <div class="experiment-container">
+                            <canvas id="physics-experiment-canvas"></canvas>
+                        </div>
+                        <div class="experiment-controls">
+                            <div class="control-group">
+                                <label for="gravity">Gravidade</label>
+                                <input type="range" id="gravity" min="0" max="2" step="0.1" value="0.5">
+                            </div>
+                            <div class="control-group">
+                                <label for="friction">Atrito</label>
+                                <input type="range" id="friction" min="0" max="1" step="0.01" value="0.05">
+                            </div>
+                            <div class="control-group">
+                                <label for="elasticity">Elasticidade</label>
+                                <input type="range" id="elasticity" min="0" max="1" step="0.01" value="0.8">
+                            </div>
+                            <button class="add-object">Adicionar Objeto</button>
+                            <button class="reset-simulation">Reiniciar</button>
+                        </div>
+                        <div class="experiment-info">
+                            <h3>Motor de Física 2D</h3>
+                            <p>Este experimento demonstra a implementação de um motor de física 2D simples usando JavaScript puro. Você pode adicionar objetos, ajustar parâmetros físicos e observar as interações entre os objetos.</p>
+                            <p>Tecnologias utilizadas: JavaScript, Canvas, Física computacional</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Contato -->
+        <section id="contact" class="section section-contact">
+            <div class="section-header">
+                <h2 class="section-title">Contato</h2>
+                <div class="section-subtitle">Vamos conversar sobre seu próximo projeto</div>
+                <div class="section-nav">
+                    <button class="section-nav-btn back-to-universe" data-target="universe">Voltar ao Universo</button>
+                </div>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-form-container">
+                    <h3 class="contact-form-title">Envie uma Mensagem</h3>
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nome</label>
+                            <input type="text" id="name" name="name" required>
+                            <div class="form-border"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="form-border"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Assunto</label>
+                            <input type="text" id="subject" name="subject" required>
+                            <div class="form-border"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <div class="form-border"></div>
+                        </div>
+                        <button type="submit" class="form-submit-btn">Enviar Mensagem</button>
+                    </form>
+                    <div class="form-success">
+                        <div class="success-icon">✓</div>
+                        <h3 class="success-title">Mensagem Enviada!</h3>
+                        <p class="success-message">Obrigado pelo contato. Retornarei em breve.</p>
+                        <button class="success-close">Fechar</button>
+                    </div>
+                </div>
+
+                <div class="contact-info">
+                    <h3 class="contact-info-title">Informações de Contato</h3>
+                    <div class="contact-info-items">
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">✉</div>
+                            <div class="contact-info-text">
+                                <h4>Email</h4>
+                                <p>contato@exemplo.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">☎</div>
+                            <div class="contact-info-text">
+                                <h4>Telefone</h4>
+                                <p>+55 (11) 98765-4321</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">📍</div>
+                            <div class="contact-info-text">
+                                <h4>Localização</h4>
+                                <p>São Paulo, Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-map">
+                        <h3 class="social-map-title">Mapa Estelar Social</h3>
+                        <div class="social-map-container">
+                            <a href="#" class="social-star" data-social="linkedin" target="_blank">
+                                <div class="star-icon">in</div>
+                                <div class="star-name">LinkedIn</div>
+                            </a>
+                            <a href="#" class="social-star" data-social="github" target="_blank">
+                                <div class="star-icon">gh</div>
+                                <div class="star-name">GitHub</div>
+                            </a>
+                            <a href="#" class="social-star" data-social="twitter" target="_blank">
+                                <div class="star-icon">tw</div>
+                                <div class="star-name">Twitter</div>
+                            </a>
+                            <a href="#" class="social-star" data-social="instagram" target="_blank">
+                                <div class="star-icon">ig</div>
+                                <div class="star-name">Instagram</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/experiments.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
